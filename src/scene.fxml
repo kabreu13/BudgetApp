@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <TableView layoutX="18.0" layoutY="14.0" prefHeight="170.0">
+              <columns>
+                <TableColumn prefWidth="150.0" text="Income" />
+                <TableColumn prefWidth="220.0" text="Fixed Expenses" />
+                  <TableColumn prefWidth="234.0" text="Variable Expenses" />
+              </columns>
+            </TableView>
+            <Label layoutX="71.0" layoutY="188.0" text="Totals">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="70.0" layoutY="214.0" text="Income">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="70.0" layoutY="263.0" text="Expenses">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="70.0" layoutY="314.0" text="Surplus">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="calculateBtn" alignment="CENTER" layoutX="61.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleCalcBtn" text="Calculate" />
+            <Button fx:id="resetBtn" alignment="CENTER" layoutX="230.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleResetBtn" text="Reset All" />
+            <Button fx:id="exportBtn" contentDisplay="CENTER" layoutX="131.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleExportBtn" text="Export to Excel" />
+            <Button fx:id="addIncomeBtn" layoutX="420.0" layoutY="211.0" mnemonicParsing="false" onAction="#handleAddIncomeBtn" text="Add Income" />
+            <Button fx:id="addFixedExBtn" layoutX="402.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleAddFixedExBtn" text="Add Fixed Expense" />
+            <Button fx:id="addVarExBtn" layoutX="395.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleAddVarExBtn" text="Add Variable Expense" />
+            <Text fx:id="incomeText" layoutX="136.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="94.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="expensesText" layoutX="136.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="94.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="surplusText" layoutX="136.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="94.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="addVarExField" layoutX="543.0" layoutY="311.0" prefHeight="25.0" prefWidth="81.0" />
+            <TextField fx:id="addFixedExField" layoutX="543.0" layoutY="259.0" prefHeight="25.0" prefWidth="81.0" />
+            <TextField fx:id="addIncomeField" layoutX="543.0" layoutY="210.0" prefHeight="25.0" prefWidth="81.0" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
